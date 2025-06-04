@@ -11,6 +11,7 @@ public class ProductoRepository {
     //Equivalente a poner SELECT * FROM productos
     public List<Producto> getAll() {
         //Se castea de iterable a lista
+
         return (List<Producto>) productoCrudRepository.findAll();
     }
 }
