@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Entity
 @Table (name = "compras")
@@ -24,8 +25,17 @@ public class Compra {
     private String medioPago;
 
     private String comentario;
-
     private String estado;
+
+    //Relación con cliente: muchas compras para un cliente
+    @ManyToOne
+    //insertable/Updte en ffalse es para que no haya modificaciones
+    @JoinColumn (name = "id_cliente", insertable = false, updatable = false)
+    private Cliente cliente;
+
+    //Una compra tiene muchos productos
+    @OneToMany(mappedBy = "compra")
+    private List<CompraProducto> productos;
 
     public int getIdCompra() {
         return idCompra;

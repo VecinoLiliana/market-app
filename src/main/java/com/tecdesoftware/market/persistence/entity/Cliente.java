@@ -2,12 +2,15 @@ package com.tecdesoftware.market.persistence.entity;
 
 import jakarta.persistence.*;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Entity
 @Table (name= "clientes")
 public class Cliente {
 
     @Id
-    //@GeneratedValue no lo ponemos, Por que el ID será el nñumero de la INE
+    //@GeneratedValue no lo ponemos, Por que el ID será el número de la INE
     private Integer id;
 
     private String nombre;
@@ -20,6 +23,9 @@ public class Cliente {
 
     @Column(name = "correo_electronico")
     private String correoElectronico;
+
+    @OneToMany (mappedBy = "cliente")
+    private List<Compra> compras;
 
     public Integer getId() {
         return id;
