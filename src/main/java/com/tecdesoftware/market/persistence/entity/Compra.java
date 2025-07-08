@@ -29,13 +29,13 @@ public class Compra {
 
     //Relación con cliente: muchas compras para un cliente
     @ManyToOne
-    //insertable/Updte en ffalse es para que no haya modificaciones
+    //insertable/Updte en false es para que no haya modificaciones
     @JoinColumn (name = "id_cliente", insertable = false, updatable = false)
     private Cliente cliente;
 
-    //Una compra tiene muchos productos
-    @OneToMany(mappedBy = "compra")
-    private List<CompraProducto> productos;
+    //Relacion con la entidad CompraProducto
+    @OneToMany (mappedBy = "compra")
+    private List< CompraProducto> productos;
 
     public int getIdCompra() {
         return idCompra;
