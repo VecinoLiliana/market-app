@@ -18,6 +18,7 @@ public class CompraProducto {
 
     //Unir la tabla compras
     @ManyToOne
+    @MapsId("idCompra")
     @JoinColumn (name = "id_compra", insertable = false, updatable = false)
     private Compra compra;
 
@@ -55,5 +56,21 @@ public class CompraProducto {
 
     public void setEstado(Boolean estado) {
         this.estado = estado;
+    }
+
+    public Compra getCompra() {
+        return compra;
+    }
+
+    public void setCompra(Compra compra) {
+        this.compra = compra;
+    }
+
+    public Producto getProductos() {
+        return productos;
+    }
+
+    public void setProductos(Producto productos) {
+        this.productos = productos;
     }
 }

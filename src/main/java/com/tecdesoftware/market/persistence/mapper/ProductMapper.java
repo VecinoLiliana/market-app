@@ -1,6 +1,7 @@
 package com.tecdesoftware.market.persistence.mapper;
 
 import com.tecdesoftware.market.domain.Product;
+import com.tecdesoftware.market.domain.Purchase;
 import com.tecdesoftware.market.persistence.entity.Producto;
 import org.mapstruct.InheritInverseConfiguration;
 import org.mapstruct.Mapper;
@@ -8,6 +9,7 @@ import org.mapstruct.Mapping;
 import org.mapstruct.Mappings;
 
 import java.util.List;
+import java.util.Optional;
 
 //Se usa "uses" porque se tiene el atributo category que a su vez tiene su propio Mapper
 @Mapper(componentModel = "spring", uses = CategoryMapper.class)
@@ -27,4 +29,10 @@ public interface ProductMapper {
     @Mapping(target = "codigoBarras", ignore = true)
     Producto toProducto(Product product);
 
+    interface PurchaseRepository {
+        List<Purchase> getAll();
+        Optional<List<Purchase>> getByClient(String clientId);
+        Purchase save(Purchase purchase);
+
+    }
 }
