@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Repository
-public class CompraRepository implements ProductMapper.PurchaseRepository {
+public class PurchaseRepository implements ProductMapper.PurchaseRepository {
 
     @Autowired
     private CompraCrudRepository compraCrudRepository;

@@ -11,7 +11,7 @@ import org.mapstruct.Mappings;
 public interface PurchaseItemMapper {
 
     @Mappings({
-            @Mapping( source = "id.id_producto", target = "productId" ),
+            @Mapping( source = "id.productoId", target = "productId" ),
             @Mapping( source = "cantidad", target = "quantity" ),
             // @Mapping( source = "total", target = "total" ),  No es necesario por que se llaman igual
             @Mapping( source = "estado", target = "active" ),
@@ -20,9 +20,9 @@ public interface PurchaseItemMapper {
 
     @InheritInverseConfiguration
     @Mappings({
-            @Mapping( target = "id.id_compra", ignore = true),
+            @Mapping( target = "id.compraId", ignore = true),
             @Mapping( target = "compra", ignore = true),
-            @Mapping( target = "producto", ignore = true),
+            @Mapping( target = "productos", ignore = true),
     })
     CompraProducto toCompraProducto(PurchaseItem item);
 }

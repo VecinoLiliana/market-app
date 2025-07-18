@@ -12,10 +12,10 @@ import java.io.Serializable;
 //Seriezable es para que sea autoincrementable
 public class CompraProductoPK implements Serializable {
 
-    @Column (name = "id_compra")
+    @Column(name = "id_compra")
     private int compraId;
 
-    @Column (name = "id_producto")
+    @Column(name = "id_producto")
     private int productoId;
 
     public int getCompraId() {

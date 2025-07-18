@@ -18,7 +18,7 @@ public class CompraProducto {
 
     //Unir la tabla compras
     @ManyToOne
-    @MapsId("idCompra")
+    @MapsId("compraId")
     @JoinColumn (name = "id_compra", insertable = false, updatable = false)
     private Compra compra;
 
