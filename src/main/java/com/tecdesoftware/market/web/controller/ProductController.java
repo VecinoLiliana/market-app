@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Optional;
-
+@CrossOrigin(origins = "*")
 //Le dice a Spring que va a ser el controlador de una API REST
 @RestController
 @RequestMapping("/products")
@@ -83,7 +83,7 @@ public class ProductController {
                                     name = "Example Product",
                                     value = """
                                             {
-                                            "name" : "Ian coke"
+                                            "name" : "Ian coke",
                                             "categoryId": 2,
                                             "price": "99.50",
                                             "stock": 30,
